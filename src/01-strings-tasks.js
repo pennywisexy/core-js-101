@@ -213,8 +213,35 @@ function extractEmails(str) {
  *             '└──────────┘\n'
  *
  */
-function getRectangleString(/* width, height */) {
-  throw new Error('Not implemented');
+function getRectangleString(width, height) {
+  const newWidthLength = width - 2;
+  const strArr = [];
+
+  for (let i = 0; i < height; i += 1) {
+    strArr.push([]);
+  }
+
+  strArr[0][0] = String.fromCharCode(9484);
+  strArr[strArr.length - 1][0] = String.fromCharCode(9492);
+
+  for (let i = 0; i < newWidthLength; i += 1) {
+    strArr[0].push(String.fromCharCode(9472));
+    strArr[strArr.length - 1].push(String.fromCharCode(9472));
+  }
+
+  strArr[0].push(String.fromCharCode(9488));
+  strArr[strArr.length - 1].push(String.fromCharCode(9496));
+
+  for (let i = 1; i < strArr.length - 1; i += 1) {
+    strArr[i][0] = String.fromCharCode(9474);
+    for (let j = 1; j < newWidthLength + 1; j += 1) {
+      strArr[i].push(String.fromCharCode(32));
+    }
+    strArr[i].push(String.fromCharCode(9474));
+  }
+
+  strArr.forEach((elem) => elem.push('\n'));
+  return strArr.flat().join('');
 }
 
 

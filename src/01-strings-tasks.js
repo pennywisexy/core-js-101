@@ -261,8 +261,32 @@ function getRectangleString(width, height) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
+function encodeToRot13(str) {
+  const encodeObject = {
+    decodeLib: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',
+    encodeLib: 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm',
+  };
+
+  const arrStr = str.split('');
+  const encodeNum = [];
+  const encodeArr = [];
+
+  arrStr.forEach((element) => {
+    if (element.match(/^[a-zA-Z]/)) {
+      encodeNum.push(encodeObject.decodeLib.indexOf(element));
+    } else {
+      encodeNum.push(element);
+    }
+  });
+
+  encodeNum.forEach((index) => {
+    if (typeof index === 'number') {
+      encodeArr.push(encodeObject.encodeLib[index]);
+    } else {
+      encodeArr.push(index);
+    }
+  });
+  return encodeArr.join('');
 }
 
 /**

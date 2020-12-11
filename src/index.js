@@ -1,4 +1,5 @@
-// function doubleArray(arr) {
-//   return arr.concat(arr)
+// function getArrayOfPositives(arr) {
+//   // return arr.filter(e => e >= 0);
 // }
-// console.log(doubleArray([1,2,3,4]));
+
+// console.log(getArrayOfPositives([1,2,3,4,5,-1,-3]))

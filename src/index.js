@@ -1,5 +1,9 @@
-// function getArrayOfPositives(arr) {
-//   // return arr.filter(e => e >= 0);
+// function toCsvText(arr) {
+//   Array.prototype.map.call(arr, (e) => {
+//     e.concat('\n')
+//   }).join('');
+//   return arr
 // }
 
-// console.log(getArrayOfPositives([1,2,3,4,5,-1,-3]))
+
+// console.log(toCsvText([[1],[2],[4]]))

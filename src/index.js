@@ -1,5 +1,13 @@
-// function findElement(arr, value) {
-//   return arr.indexOf(value)
-// }
+// function generateOdds(len) {
+//   const arr = [];
+//   let count = 1;
+//   arr.length = len;
 
-// console.log(findElement([1,2,3,4], 2))
+//   arr.fill();
+//   Array.prototype.map.call(arr, (e) => {
+//     arr[arr.indexOf(e)] = count;
+//     count += 2;
+//   });
+//   return arr;
+// }
+// console.log(generateOdds(4));

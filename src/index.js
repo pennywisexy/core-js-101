@@ -1,13 +1,4 @@
-// function generateOdds(len) {
-//   const arr = [];
-//   let count = 1;
-//   arr.length = len;
-
-//   arr.fill();
-//   Array.prototype.map.call(arr, (e) => {
-//     arr[arr.indexOf(e)] = count;
-//     count += 2;
-//   });
-//   return arr;
+// function doubleArray(arr) {
+//   return arr.concat(arr)
 // }
-// console.log(generateOdds(4));
+// console.log(doubleArray([1,2,3,4]));

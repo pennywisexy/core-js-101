@@ -299,8 +299,9 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 1,2,3,4,5,6,7,8,9,10 ] => [ 10, 9, 8 ]
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
-function get3TopItems(/* arr */) {
-  throw new Error('Not implemented');
+function get3TopItems(arr) {
+  Array.prototype.reverse.call(arr);
+  return Array.prototype.splice.call(arr, 0, 3);
 }
 
 
@@ -317,8 +318,8 @@ function get3TopItems(/* arr */) {
  *   [ null, 1, 'elephant' ] => 1
  *   [ 1, '2' ] => 1
  */
-function getPositivesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getPositivesCount(arr) {
+  return Array.prototype.filter.call(arr, (el) => (Number.isInteger(el) ? el > 0 : false)).length;
 }
 
 /**
@@ -334,8 +335,31 @@ function getPositivesCount(/* arr */) {
  *   [ 'nine','eight','nine','eight'] => [ 'eight','eight','nine','nine']
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
-function sortDigitNamesByNumericOrder(/* arr */) {
-  throw new Error('Not implemented');
+function sortDigitNamesByNumericOrder(arr) {
+  const newArr = [];
+  const finishArr = [];
+  const obj = {
+    zero: 0,
+    one: 1,
+    two: 2,
+    three: 3,
+    four: 4,
+    five: 5,
+    six: 6,
+    seven: 7,
+    eight: 8,
+    nine: 9,
+  };
+  Array.prototype.map.call(arr, (e) => {
+    Array.prototype.map.call(Object.keys(obj), (key) => {
+      if (e === key) {
+        Array.prototype.push.call(newArr, obj[key]);
+      }
+    });
+  });
+  Array.prototype.sort.call(newArr)
+    .map((e) => Array.prototype.push.call(finishArr, Object.entries(obj)[e][0]));
+  return finishArr;
 }
 
 /**

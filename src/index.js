@@ -1,35 +1,27 @@
-// function propagateItemsByPositionIndex(arr) {
-//   let newArr = [];
-//   let count = 0;
-//   let count1 = 0;
-//   Array.prototype.map.call(arr, (e) => {
-//    if(arr.indexOf(e) === count) {
-//      Array.prototype.unshift.call(newArr, [])
-//      Array.prototype.map.call(newArr, (el) => {
-//        Array.prototype.push.call(el, e)
-//      });
-//      count += 1;
-//    }
-//    return newArr
-//   });
-//   Array.prototype.map.call(newArr, (elemArr) => {
-//     if(newArr.indexOf(elemArr) === count1){
-//       Array.prototype.map.call(elemArr, (element) => {
-//         element = arr[arr.indexOf(count1)]
-//       })
-//      count += 1;
-//     }
-//    return newArr
-//   })
-//   Array.prototype.map.call(newArr, (elem) => {
-//     Array.prototype.map.call(elem, (arrElem) => {
-//       arrElem = 1
-//     console.log(arrElem)
-
-//       return arrElem
+// function sortDigitNamesByNumericOrder(arr) {
+//   let newArr = []
+//   let finishArr = []
+//   const obj = {
+//     'one': 1,
+//     'two': 2,
+//     'three': 3,
+//     'four': 4,
+//     'five': 5,
+//     'six': 6,
+//     'seven': 7,
+//     'eight': 8,
+//     'nine': 9
+//   }
+//   arr.map((e)=> {
+//     Object.keys(obj).map((key) => {
+//       if(e === key) {
+//         newArr.push(obj[key])
+//       }
 //     })
-
-//   })
-//   console.log(newArr)
+//   });
+//   newArr.sort()
+//         .map((e) => finishArr.push(Object.entries(obj)[e - 1][0]));
+//   return finishArr;
 // }
-// console.log(propagateItemsByPositionIndex([1,2,3,4]))
+
+// console.log(sortDigitNamesByNumericOrder(['two', 'one', 'three','four']))

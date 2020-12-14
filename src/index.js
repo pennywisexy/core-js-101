@@ -15,13 +15,20 @@
 //   Array.prototype.map.call(newArr, (elemArr) => {
 //     if(newArr.indexOf(elemArr) === count1){
 //       Array.prototype.map.call(elemArr, (element) => {
-//         console.log(element)
-
 //         element = arr[arr.indexOf(count1)]
 //       })
 //      count += 1;
 //     }
 //    return newArr
+//   })
+//   Array.prototype.map.call(newArr, (elem) => {
+//     Array.prototype.map.call(elem, (arrElem) => {
+//       arrElem = 1
+//     console.log(arrElem)
+
+//       return arrElem
+//     })
+
 //   })
 //   console.log(newArr)
 // }
